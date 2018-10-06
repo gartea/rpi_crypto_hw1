@@ -3,12 +3,13 @@ s0 = [[1,0,3,2],[3,2,1,0],[0,2,1,3],[3,1,3,2]]
 s1 = [[0,1,2,3],[2,0,1,3],[3,0,1,0],[2,1,0,3]]
 
 def permute(bits, permutation):
-    perm = [(p - len(bits))*-1 for p in permutation]
+    perm = [p - 1 for p in permutation]
     reorder = [bits[x] for x in perm]
     return ''.join(reorder)
 
 def substitute(b, s):
-    return format(s[int(b[0])*2 + int(b[3])][int(b[1])*2 + int(b[2])], '02b')
+    num = format(s[int(b[3])*2 + int(b[0])][int(b[2])*2 + int(b[1])], '02b')
+    return num[0]+num[1]
 
 def round(left, right, key):
     # turn the current right into next rounds left
@@ -75,7 +76,7 @@ def str_to_bits(s):
     turns a hex string into a bit string
     """
     singles = [format(int(x, 16), '04b') for x in s]
-    doubles = [singles[i] + singles[i+1] for i in range(len(singles)//2)]
+    doubles = [singles[2*i] + singles[2*i+1] for i in range(len(singles)//2)]
     if len(singles) % 2 == 1:
         doubles.append(singles[-1] + '0000')
     return doubles
