@@ -1,0 +1,58 @@
+\documentclass{article}
+\usepackage{graphicx}
+\usepackage[margin=1.0in]{geometry}
+
+\begin{document}
+
+\title{Crypto Homework 2a}
+\author{Alex Garten}
+\date{}
+
+1. The code tries to impliment a collision attack by replacing
+words with synonyms and attempting to find a hash collision with
+the original text\\
+
+2. \\
+10-12) \\
+$x=0$ None \\
+$x=1$ None \\
+$x=2$ None \\
+$x=3$ None \\
+$x=4$ None \\
+$x=4$ None \\
+$x=5$ $(5,2) (5,9)$\\
+$x=6$ None \\
+$x=7$ $(7,2) (7,9)$\\
+$x=8$ $(8,3) (8,8)$\\
+$x=9$ None \\
+$x=10$ $(10,2) (10,9)$\\
+Thus $[(2, 4), (2, 7), (3, 5), (3, 6), (5, 2), (5, 9), (7, 2), (7, 9), (8, 3), (8, 8), (10, 2), (10, 9)]$\\
+10-13) \\
+There are not a whole lot of different points reducing security
+10-14) \\
+2G: (5,2)
+3G: (8,3)
+4G: (10,2)
+5G: (3,6)
+6G: (7,9)
+7G: (7,2)
+8G: (3,5)
+9G: (10,9)
+10G: (8,8)
+11G: (5,9)
+12G: (2,4)
+13G: (2,7) \\
+10-15) \\
+a) public key is $P_b = 7G = (7,2)$ \\
+b) $C_m = \{kG, P_m + kP_B\} = \{3G, P_m + 3P_B\} = 
+\{(8,3), (10,9) + (3,5)\} = \{(8,3) (2,4)\}$ \\
+c) $P_m = n_B*(8,3) - (2,4) = (3,5) - (2,4) = (10,9)$
+
+3. \\
+31531: prime \\
+520482: composite 2 * 260241 = 520482 \\
+485827: prime \\
+15485863: prime \\
+
+
+\end{document}
